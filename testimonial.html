@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us | Restoran</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+  <style>
+    body{
+      font-family: 'Nunito', sans-serif;
+    }
+
+
+/* Texte normal dans le dropdown */
+.dropdown-menu .dropdown-item{
+  color: #000 !important;
+}
+
+.dropdown-item.page-active{
+  background-color: #ffc107; /* orange */}
+
+/* Supprime le bleu (visited/focus/active) */
+.dropdown-menu .dropdown-item:visited,
+.dropdown-menu .dropdown-item:focus,
+.dropdown-menu .dropdown-item:active{
+  color: #000 !important;
+  background: transparent !important;
+}
+
+/* (Option) Hover orange propre */
+.dropdown-menu .dropdown-item:hover{
+  background-color: #ffc107 !important;
+  color: #000 !important;
+}
+
+
+     #menuTabs .nav-link { 
+  margin-top: -50px;   /* ajuste : -10 / -15 / -25 */
+}
+
+    /* Navbar */
+    .navbar{
+      background: rgba(0,0,0,.75);
+    }
+
+    /* HERO ABOUT */
+    .hero-header{
+      background: linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
+                  url("images/hero.webp") center/cover no-repeat;
+
+      min-height: 380px;                 /* hauteur réduite */
+      display: flex;
+      align-items: center;
+      padding-top: 90px;                 /* espace navbar fixed */
+    }
+
+    .breadcrumb-custom{
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .script-font{
+      font-family: 'Pacifico', cursive;
+    }
+
+    /* Navbar transparente */
+.navbar-transparent {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Supprimer toute bordure */
+.navbar {
+  border-bottom: none !important;
+}
+.mine {
+  margin-top: 80px;
+ 
+}
+
+.feature-card{
+      background: #fff;
+      border-radius: .5rem;
+      transition: background-color .25s ease, transform .25s ease;
+      height: 100%;
+    }
+    .feature-icon{
+      color: #ffc107; /* warning */
+      transition: color .25s ease;
+    }
+    .feature-title{
+      color: #000;
+      transition: color .25s ease;
+    }
+    .feature-text{
+      color: #6c757d;
+      transition: color .25s ease;
+    }
+    .feature-card:hover{
+      background: #ffc107;
+      transform: translateY(-2px);
+    }
+    .feature-card:hover .feature-icon,
+    .feature-card:hover .feature-title,
+    .feature-card:hover .feature-text{
+      color: #fff;
+    }
+
+.team-card{
+      overflow: hidden;              /* cache ce qui dépasse pendant l'animation */
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    /* zone réseaux : fermée par défaut */
+    .team-card .social-wrap{
+      max-height: 0;                 /* fermé */
+      opacity: 0;
+      transform: translateY(14px);   /* vient du bas */
+      transition: max-height .35s ease, opacity .25s ease, transform .35s ease;
+    }
+
+    /* ouverture au hover */
+    .team-card:hover .social-wrap{
+      max-height: 90px;              /* hauteur suffisante pour les icônes */
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* optionnel : petit effet hover */
+    .team-card:hover{
+      transform: translateY(-2px);
+    }
+
+    
+.move-up {  margin-top: -50px ; }
+
+     .nav-link{
+  position: relative;
+ 
+}
+
+.tab-underline{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;                 /* même ligne pour tous */
+  width: 130px;              /* même largeur */
+  height: 3px;
+  background: transparent;
+}
+
+.nav-link.active .tab-underline{
+  background: var(--bs-warning);
+}
+
+.mive-up {  margin-top: -80px ; }
+
+  #testiCarousel .carousel-indicators [data-bs-target]{
+    width:14px;height:14px;
+    border-radius:50%;
+    background:#e7e6e3;
+    opacity:1;
+    margin:0;
+  }
+  #testiCarousel .carousel-indicators .active{
+    background:#ffc107;
+    border-color:#ffc107;
+  }
+
+    #backToTop:hover {
+    transform: translateY(-3px);
+    transition: 0.3s ease;
+  }
+
+  .nav-link.active,
+.dropdown-item.active {
+  color: #ffc107 !important;
+  font-weight: 600;
+}
+
+  </style>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-hidden">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <i class="fa fa-utensils text-warning"></i>
+      <span class="text-warning fw-bold fs-4">Restoran</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item mx-2"><a class="nav-link" href="index.html">HOME</a></li>
+        <li class="nav-item mx-2"><a class="nav-link" href="about.html">ABOUT</a></li>
+        <li class="nav-item mx-2"><a class="nav-link" href="service.html">SERVICE</a></li>
+        <li class="nav-item mx-2"><a class="nav-link" href="menu.html">MENU</a></li>
+       
+
+        <li class="nav-item dropdown mx-2">
+            <a class="nav-link dropdown-toggle active text-warning" href="#" role="button" data-bs-toggle="dropdown">PAGES</a>
+            <ul class="dropdown-menu ">
+              <li><a class="dropdown-item " href="booking.html">Booking</a></li>
+              <li><a class="dropdown-item" href="team.html">Our Team</a></li>
+              <li><a class="dropdown-item page-active " href="testimonial.html">Testimonial</a></li>
+            </ul>
+          </li>
+           <li class="nav-item mx-2"><a class="nav-link" href="contact.html">CONTACT</a></li>
+        <li class="nav-item ms-3">
+          <a href="booking.html" class="btn btn-warning px-4">BOOK A TABLE</a>
+        </li>
+      </ul>
+    </div>-
+  </div>
+</nav>
+
+
+<!-- ================= HERO / BREADCRUMB ================= -->
+ <header>
+<section class="hero-header text-center text-white">
+  <div class="container">
+    <h1 class="display-4 fw-bold mb-3 text-center"> Testimonial </h1>
+
+    <div class="breadcrumb-custom">
+      <a href="index.html" class="text-warning text-decoration-none">HOME</a>
+      <span class="mx-2 text-warning">/</span>
+      <span class="text-warning">PAGES</span>
+      <span class="mx-2 text-warning">/</span>
+      <span class="text-white"> TESTIMONIAL </span>
+    </div>
+  </div>
+</section>
+</header>
+
+<main>
+
+
+<section class="py-2 bg-light">
+  <div class="container py-2">
+
+    <!-- Titre -->
+    <div class="text-center mb-5 mine">
+      <div class="d-flex justify-content-center align-items-center gap-3 mb-1 ">
+        <span class="border-top border-2 border-warning d-inline-block" style="width:70px;"></span>
+        <span class="text-warning fst-italic fw-semibold" style="font-family: pacifico,cursive;">Testimonial</span>
+        <span class="border-top border-2 border-warning d-inline-block" style="width:70px;"></span>
+      </div>
+      <h2 class="fw-bold display-5 mb-0">Our Clients Say!!!</h2>
+    </div>
+
+    <!-- Carousel -->
+    <div id="testiCarousel" class="carousel slide" data-bs-ride="carousel">
+
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row g-4 justify-content-center align-items-stretch">
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="border bg-white p-4 h-100">
+                <div class="fs-1 text-warning fw-bold mb-2">“</div>
+                <p class="text-muted mb-4">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet.</p>
+                <div class="d-flex align-items-center gap-3">
+                  <img src="images/testimonial-1.avif" class="rounded-circle" style="width:55px;height:55px;object-fit:cover;" alt="">
+                  <div>
+                    <div class="fw-bold">Client Name</div>
+                    <div class="text-muted small">Profession</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="bg-warning p-4 h-100">
+                <div class="fs-1 text-white fw-bold mb-2">“</div>
+                <p class="text-white mb-4">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet.</p>
+                <div class="d-flex align-items-center gap-3">
+                  <img src="images/testimonial-2.avif" class="rounded-circle border border-2 border-white"
+                       style="width:55px;height:55px;object-fit:cover;" alt="">
+                  <div>
+                    <div class="fw-bold text-white">Client Name</div>
+                    <div class="text-white-50 small">Profession</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="border bg-white p-4 h-100">
+                <div class="fs-1 text-warning fw-bold mb-2">“</div>
+                <p class="text-muted mb-4">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet.</p>
+                <div class="d-flex align-items-center gap-3">
+                  <img src="images/testimonial-3.avif" class="rounded-circle" style="width:55px;height:55px;object-fit:cover;" alt="">
+                  <div>
+                    <div class="fw-bold">Client Name</div>
+                    <div class="text-muted small">Profession</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row g-4 justify-content-center align-items-stretch">
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="border bg-white p-4 h-100">
+                <div class="fs-1 text-warning fw-bold mb-2">“</div>
+                <p class="text-muted mb-4">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet.</p>
+                <div class="d-flex align-items-center gap-3">
+                  <img src="images/testimonial-4.avif" class="rounded-circle" style="width:55px;height:55px;object-fit:cover;" alt="">
+                  <div>
+                    <div class="fw-bold">Client Name</div>
+                    <div class="text-muted small">Profession</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="bg-warning p-4 h-100">
+                <div class="fs-1 text-white fw-bold mb-2">“</div>
+                <p class="text-white mb-4">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet.</p>
+                <div class="d-flex align-items-center gap-3">
+                  <img src="images/testimonial-1.avif" class="rounded-circle border border-2 border-white"
+                       style="width:55px;height:55px;object-fit:cover;" alt="">
+                  <div>
+                    <div class="fw-bold text-white">Client Name</div>
+                    <div class="text-white-50 small">Profession</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="border bg-white p-4 h-100">
+                <div class="fs-1 text-warning fw-bold mb-2">“</div>
+                <p class="text-muted mb-4">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet.</p>
+                <div class="d-flex align-items-center gap-3">
+                  <img src="images/testimonial-2.avif" class="rounded-circle" style="width:55px;height:55px;object-fit:cover;" alt="">
+                  <div>
+                    <div class="fw-bold">Client Name</div>
+                    <div class="text-muted small">Profession</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="row g-4 justify-content-center align-items-stretch">
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="border bg-white p-4 h-100">
+                <div class="fs-1 text-warning fw-bold mb-2">“</div>
+                <p class="text-muted mb-4">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet.</p>
+                <div class="d-flex align-items-center gap-3">
+                  <img src="images/testimonial-3.avif" class="rounded-circle" style="width:55px;height:55px;object-fit:cover;" alt="">
+                  <div>
+                    <div class="fw-bold">Client Name</div>
+                    <div class="text-muted small">Profession</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="bg-warning p-4 h-100">
+                <div class="fs-1 text-white fw-bold mb-2">“</div>
+                <p class="text-white mb-4">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet.</p>
+                <div class="d-flex align-items-center gap-3">
+                  <img src="images/testimonial-4.avif" class="rounded-circle border border-2 border-white"
+                       style="width:55px;height:55px;object-fit:cover;" alt="">
+                  <div>
+                    <div class="fw-bold text-white">Client Name</div>
+                    <div class="text-white-50 small">Profession</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="border bg-white p-4 h-100">
+                <div class="fs-1 text-warning fw-bold mb-2">“</div>
+                <p class="text-muted mb-4">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet.</p>
+                <div class="d-flex align-items-center gap-3">
+                  <img src="images/testimonial-1.avif" class="rounded-circle" style="width:55px;height:55px;object-fit:cover;" alt="">
+                  <div>
+                    <div class="fw-bold">Client Name</div>
+                    <div class="text-muted small">Profession</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="carousel-item">
+          <div class="row g-4 justify-content-center align-items-stretch">
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="border bg-white p-4 h-100">
+                <div class="fs-1 text-warning fw-bold mb-2">“</div>
+                <p class="text-muted mb-4">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet.</p>
+                <div class="d-flex align-items-center gap-3">
+                  <img src="images/testimonial-2.avif" class="rounded-circle" style="width:55px;height:55px;object-fit:cover;" alt="">
+                  <div>
+                    <div class="fw-bold">Client Name</div>
+                    <div class="text-muted small">Profession</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="bg-warning p-4 h-100">
+                <div class="fs-1 text-white fw-bold mb-2">“</div>
+                <p class="text-white mb-4">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet.</p>
+                <div class="d-flex align-items-center gap-3">
+                  <img src="images/testimonial-3.avif" class="rounded-circle border border-2 border-white"
+                       style="width:55px;height:55px;object-fit:cover;" alt="">
+                  <div>
+                    <div class="fw-bold text-white">Client Name</div>
+                    <div class="text-white-50 small">Profession</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="border bg-white p-4 h-100">
+                <div class="fs-1 text-warning fw-bold mb-2">“</div>
+                <p class="text-muted mb-4">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet.</p>
+                <div class="d-flex align-items-center gap-3">
+                  <img src="images/testimonial-4.avif" class="rounded-circle" style="width:55px;height:55px;object-fit:cover;" alt="">
+                  <div>
+                    <div class="fw-bold">Client Name</div>
+                    <div class="text-muted small">Profession</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ✅ Ronds en bas (AUTO active) -->
+      <div class="carousel-indicators position-static mt-4 d-flex justify-content-center gap-3">
+        <button type="button" data-bs-target="#testiCarousel" data-bs-slide-to="0" class="active rounded-circle border"
+                aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#testiCarousel" data-bs-slide-to="1" class="rounded-circle border"
+                aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#testiCarousel" data-bs-slide-to="2" class="rounded-circle border"
+                aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#testiCarousel" data-bs-slide-to="3" class="rounded-circle border"
+                aria-label="Slide 4"></button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+   
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="text-light pt-5 mt-5" style="background:#0b1426;">
+  <div class="container py-5">
+
+    <div class="row g-5 ">
+
+      <!-- Company -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <h4 class="text-warning fst-italic mb-4 d-flex align-items-center gap-3 " style="font-family: pacifico,cursive;">
+          Company <span class="border-top border-2 border-warning flex-grow-1" style="max-width:90px;"></span>
+        </h4>
+
+        <ul class="list-unstyled mb-0">
+          <li class="mb-3">
+            <a href="#" class="text-white text-decoration-none d-flex align-items-center gap-2">
+              <i class="bi bi-chevron-right text-warning"></i> About Us
+            </a>
+          </li>
+          <li class="mb-3">
+            <a href="#" class="text-white text-decoration-none d-flex align-items-center gap-2">
+              <i class="bi bi-chevron-right text-warning"></i> Contact Us
+            </a>
+          </li>
+          <li class="mb-3">
+            <a href="#" class="text-white text-decoration-none d-flex align-items-center gap-2">
+              <i class="bi bi-chevron-right text-warning"></i> Reservation
+            </a>
+          </li>
+          <li class="mb-3">
+            <a href="#" class="text-white text-decoration-none d-flex align-items-center gap-2">
+              <i class="bi bi-chevron-right text-warning"></i> Privacy Policy
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-white text-decoration-none d-flex align-items-center gap-2">
+              <i class="bi bi-chevron-right text-warning"></i> Terms &amp; Condition
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <h4 class="text-warning fst-italic mb-4 d-flex align-items-center gap-3" style="font-family:pacifico,cursive;">
+          Contact <span class="border-top border-2 border-warning flex-grow-1" style="max-width:90px;"></span>
+        </h4>
+
+        <div class="d-flex align-items-start gap-3 mb-3">
+          <i class="bi bi-geo-alt-fill text-white fs-5"></i>
+          <span>123 Street, New York, USA</span>
+        </div>
+        <div class="d-flex align-items-start gap-3 mb-3">
+          <i class="bi bi-telephone-fill text-white fs-5"></i>
+          <span>+012 345 67890</span>
+        </div>
+        <div class="d-flex align-items-start gap-3 mb-4">
+          <i class="bi bi-envelope-fill text-white fs-5"></i>
+          <span>info@example.com</span>
+        </div>
+
+        <div class="d-flex gap-2">
+          <a href="#" class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+             style="width:44px;height:44px;">
+            <i class="bi bi-twitter-x"></i>
+          </a>
+          <a href="#" class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+             style="width:44px;height:44px;">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="#" class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+             style="width:44px;height:44px;">
+            <i class="bi bi-youtube"></i>
+          </a>
+          <a href="#" class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+             style="width:44px;height:44px;">
+            <i class="bi bi-linkedin"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Opening -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <h4 class="text-warning fst-italic mb-4 d-flex align-items-center gap-3" style="font-family: pacifico,cursive;">
+          Opening <span class="border-top border-2 border-warning flex-grow-1" style="max-width:90px;"></span>
+        </h4>
+
+        <div class="mb-4">
+          <div class="fs-5 fw-semibold">Monday - Saturday</div>
+          <div class="text-white-50">09AM - 09PM</div>
+        </div>
+
+        <div>
+          <div class="fs-5 fw-semibold">Sunday</div>
+          <div class="text-white-50">10AM - 08PM</div>
+        </div>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <h4 class="text-warning fst-italic mb-4 d-flex align-items-center gap-3" style="font-family: pacifico,cursive;">
+          Newsletter <span class="border-top border-2 border-warning flex-grow-1" style="max-width:90px;"></span>
+        </h4>
+
+        <p class="text-white-50 mb-4 ">
+          Dolor amet sit justo amet elitr clita ipsum elitr est.
+        </p>
+
+        <div class="border border-warning p-2 bg-white">
+          <div class="input-group">
+            <input type="email" class="form-control border-0" placeholder="Your email">
+            <button class="btn btn-warning fw-bold">SIGNUP</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="my-5" style="border-color: rgba(255,255,255,.15);">
+
+    <div class="row align-items-center g-3">
+      <div class="col-12 col-lg-6">
+        <div class="small">
+          © <a href="#" class="text-white text-decoration-underline">Your Site Name</a>, All Right Reserved.
+          Designed By <a href="#" class="text-white text-decoration-underline">HTML Codex</a>
+        </div>
+        <div class="small mt-2">
+          Distributed By <a href="#" class="text-white text-decoration-underline">ThemeWagon</a>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-6">
+        <ul class="list-inline text-lg-end mb-0 small">
+          <li class="list-inline-item"><a class="text-white text-decoration-none" href="#">Home</a></li>
+          <li class="list-inline-item px-2 text-white-50">|</li>
+          <li class="list-inline-item"><a class="text-white text-decoration-none" href="#">Cookies</a></li>
+          <li class="list-inline-item px-2 text-white-50">|</li>
+          <li class="list-inline-item"><a class="text-white text-decoration-none" href="#">Help</a></li>
+          <li class="list-inline-item px-2 text-white-50">|</li>
+          <li class="list-inline-item"><a class="text-white text-decoration-none" href="#">FAQs</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  const currentPage = window.location.pathname.split("/").pop();
+
+  // dropdown items
+  document.querySelectorAll('.dropdown-item').forEach(item => {
+    if (item.getAttribute('href') === currentPage) {
+      item.classList.add('menu-active');
+
+      // activer aussi le parent "PAGES"
+      const dropdown = item.closest('.dropdown');
+      if (dropdown) {
+        dropdown.querySelector('.dropdown-toggle')
+                .classList.add('menu-active');
+      }
+    }
+  });
+
+  // liens normaux (HOME, ABOUT, etc.)
+  document.querySelectorAll('.nav-link').forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('menu-active');
+    }
+  });
+</script>
+
+
+<a href="#"
+   id="backToTop"
+   class="btn btn-warning btn-lg rounded-circle position-fixed"
+   style="bottom:30px; right:30px; display:none; z-index:999;">
+  <i class="fa fa-arrow-up"></i>
+</a>
+
+
+<script>
+  const backToTop = document.getElementById("backToTop");
+
+  // Afficher le bouton après un scroll
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      backToTop.style.display = "block";
+    } else {
+      backToTop.style.display = "none";
+    }
+  });
+
+  // Retour en haut au clic
+  backToTop.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
