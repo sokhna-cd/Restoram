@@ -146,43 +146,45 @@
   </style>
 </head>
 
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-hidden">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-      <i class="fa fa-utensils text-warning"></i>
-      <span class="text-warning fw-bold fs-4">Restoran</span>
-    </a>
+<body class="bg-dark">
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark bg-opacity-75  width-100">
+    <div class="container py-1 my-0">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#">
+        <i class="fa-solid fa-utensils text-warning fs-4"></i>
+        <span class="fs-4 text-warning fw-bold">Restoran</span>
+      </a>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto align-items-center">
-        <li class="nav-item mx-2"><a class="nav-link" href="index.html">HOME</a></li>
-        <li class="nav-item mx-2"><a class="nav-link" href="about.html">ABOUT</a></li>
-        <li class="nav-item mx-2"><a class="nav-link active text-warning" href="service.html">SERVICE</a></li>
-        <li class="nav-item mx-2"><a class="nav-link" href="menu.html">MENU</a></li>
-      
-        <li class="nav-item dropdown mx-2">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">PAGES</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item py-1"><a class="nav-link " href="index.html">HOME</a></li>
+          <li class="nav-item py-1"><a class="nav-link" href="about.html">ABOUT</a></li>
+          <li class="nav-item py-1"><a class="nav-link active text-warning" href="service.html">SERVICE</a></li>
+          <li class="nav-item py-1"><a class="nav-link" href="menu.html">MENU</a></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown">PAGES</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="booking.html">Booking</a></li>
-              <li><a class="dropdown-item" href="team.html">Our Team</a></li>
-              <li><a class="dropdown-item" href="testimonial.html">Testimonial</a></li>
+              <li><a class="dropdown-item text-dark" href="booking.html">Booking</a></li>
+              <li><a class="dropdown-item text-dark" href="team.html">Our Team</a></li>
+              <li><a class="dropdown-item text-dark" href="testimonial.html">Testimonial</a></li>
             </ul>
+          </li> 
+
+          <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-warning fw-semibold px-4 py-2" href="#">BOOK A TABLE</a>
           </li>
-            <li class="nav-item mx-2"><a class="nav-link" href="contact.html">CONTACT</a></li>
-
-        <li class="nav-item ms-3">
-          <a href="booking.html" class="btn btn-warning px-4">BOOK A TABLE</a>
-        </li>
-      </ul>
-    </div>-
-  </div>
-</nav>
-
+        </ul>
+      </div>
+    </div>
+  </nav>
 
 <!-- ================= HERO / BREADCRUMB ================= -->
  <header>
